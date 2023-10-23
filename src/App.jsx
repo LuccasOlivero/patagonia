@@ -9,7 +9,6 @@ import PageNotFound from "./pages/PageNotFound";
 import Cabins from "./pages/Cabins";
 import GlobalStyles from "./styles/GlobalStyles";
 import AppLayout from "./ui/AppLayout";
-
 function App() {
   return (
     <>
