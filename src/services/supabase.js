@@ -1,6 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = "https://eiyahyupkcgjshtwwlli.supabase.co";
+export const supabaseUrl = "https://eiyahyupkcgjshtwwlli.supabase.co";
 
 // row level security activated, this key only allow read data
 const supabaseKey =
