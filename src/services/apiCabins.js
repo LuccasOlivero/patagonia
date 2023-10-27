@@ -26,15 +26,15 @@ export async function createCabin(newCabin) {
     ""
   );
 
-  const imagePath =
-    "https://eiyahyupkcgjshtwwlli.supabase.co/storage/v1/object/sign/cabin-images/cabin-001.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjYWJpbi1pbWFnZXMvY2FiaW4tMDAxLmpwZyIsImlhdCI6MTY5ODA5MDczNCwiZXhwIjoxNjk4Njk1NTM0fQ.jyu7Wg4OLGHLkpr7nN5s-J4-TKMcDF7OUKMXkdnaivQ&t=2023-10-23T19%3A52%3A17.403Z";
+  // const imageName = newCabin.image.name;
+  console.log(imageName);
 
-  // https://eiyahyupkcgjshtwwlli.supabase.co/storage/v1/object/sign/cabin-images/cabin-001.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjYWJpbi1pbWFnZXMvY2FiaW4tMDAxLmpwZyIsImlhdCI6MTY5ODA5MDczNCwiZXhwIjoxNjk4Njk1NTM0fQ.jyu7Wg4OLGHLkpr7nN5s-J4-TKMcDF7OUKMXkdnaivQ&t=2023-10-23T19%3A52%3A17.403Z
+  const imagePath = `https://eiyahyupkcgjshtwwlli.supabase.co/storage/v1/object/sign/cabin-images/${imageName}?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjYWJpbi1pbWFnZXMvY2FiaW4tMDAxLmpwZyIsImlhdCI6MTY5ODA5MDczNCwiZXhwIjoxNjk4Njk1NTM0fQ.jyu7Wg4OLGHLkpr7nN5s-J4-TKMcDF7OUKMXkdnaivQ&t=2023-10-23T19%3A52%3A17.403Z`;
 
   const { data, error } = await supabase
     .from("cabins")
     .insert([{ ...newCabin, image: imagePath }])
-    .select();
+    .select("");
 
   if (error) {
     console.error(error);
