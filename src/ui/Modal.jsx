@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { HiFire } from "react-icons/hi";
+import { createPortal } from "react-dom";
 
 const StyledModal = styled.div`
   position: fixed;
@@ -48,3 +50,20 @@ const Button = styled.button`
     color: var(--color-grey-500);
   }
 `;
+
+function Modal({ children, setIsOpenModal }) {
+  return createPortal(
+    // createPortal, render a component's at the first place into virtual DOM three but keeping the same position in DOM componenet three.
+    <Overlay>
+      <StyledModal>
+        <Button>
+          <HiFire onClick={setIsOpenModal} />
+        </Button>
+        <div>{children}</div>
+      </StyledModal>
+    </Overlay>,
+    document.body
+  );
+}
+
+export default Modal;
