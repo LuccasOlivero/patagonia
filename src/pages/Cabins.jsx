@@ -4,6 +4,7 @@ import { CabinsTable } from "../features/cabins/CabinTable";
 import { useState } from "react";
 import Button from "../ui/Button";
 import CreateCabinForm from "../features/cabins/CreateCabinForm";
+import CabinTableOperations from "../features/cabins/CabinTableOperations";
 
 function Cabins() {
   const [showForm, setShowFrom] = useState(false);
@@ -12,7 +13,7 @@ function Cabins() {
     <>
       <Row type="horizontal">
         <Heading as="h1">All cabins</Heading>
-        <p>filter row</p>
+        <CabinTableOperations />
       </Row>
 
       <Row>
