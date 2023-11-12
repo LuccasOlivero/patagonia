@@ -7,8 +7,8 @@ export function useCabins() {
     data: cabins,
     error,
   } = useQuery({
-    queryKey: ["cabins"], // key to manage data in cache
-    queryFn: getCabins, // fetching data from API
+    queryKey: ["cabins"],
+    queryFn: getCabins,
   });
 
   return { isLoading, error, cabins };
