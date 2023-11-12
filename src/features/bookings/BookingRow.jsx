@@ -8,17 +8,17 @@ import {
   HiArrowDownOnSquare,
 } from "react-icons/hi2";
 
-import Tag from "ui/Tag";
-import Menus from "ui/Menus";
-import Modal from "ui/Modal";
-import ConfirmDelete from "ui/ConfirmDelete";
-import Table from "ui/Table";
+import Tag from "../../ui/Tag";
+import Menus from "../../ui/Menus";
+import ConfirmDelete from "../../ui/ConfirmDelete";
+import Table from "../../ui/Table";
+import Modal from "../../ui/Modal";
 
-import { useDeleteBooking } from "features/bookings/useDeleteBooking";
-import { formatCurrency } from "utils/helpers";
 import { formatDistanceFromNow } from "utils/helpers";
 import { useCheckout } from "features/check-in-out/useCheckout";
 import { format, isToday } from "date-fns";
+import { useDeleteBooking } from "./useDeleteBooking";
+import { formatCurrency } from "../../utils/helpers";
 
 const Cabin = styled.div`
   font-size: 1.6rem;
@@ -65,8 +65,6 @@ function BookingRow({
   const { mutate: checkout, isLoading: isCheckingOut } = useCheckout();
 
   const navigate = useNavigate();
-
-  // We will not allow editing at this point, as it's too complex for bookings... People just need to delete a booking and create a new one
 
   const statusToTagName = {
     unconfirmed: "blue",

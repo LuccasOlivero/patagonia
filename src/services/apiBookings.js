@@ -1,10 +1,12 @@
 import { getToday } from "../utils/helpers";
 import supabase from "./supabase";
 
-export async function getBooking(id) {
+export async function getBookings(id) {
   const { data, error } = await supabase
     .from("bookings")
-    .select("*, cabins(*), guests(*)")
+    .select(
+      "id created_at, startDate,endDate, numNights, numGuests, status, totalPrice, cabins(name), guests(fullName, email)"
+    )
     .eq("id", id)
     .single();
 
