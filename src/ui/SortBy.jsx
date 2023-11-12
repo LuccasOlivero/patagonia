@@ -12,11 +12,11 @@ function SortBy({ options }) {
 
   return (
     <Select
-      value={sortBy}
       options={options}
       type="white"
+      value={sortBy}
       onChange={handleChange}
-    ></Select>
+    />
   );
 }
 

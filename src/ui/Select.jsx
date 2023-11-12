@@ -16,15 +16,13 @@ const StyledSelect = styled.select`
 
 function Select({ options, value, onChange, ...props }) {
   return (
-    <div>
-      <StyledSelect value={value} onChange={onChange} {...props}>
-        {options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </StyledSelect>
-    </div>
+    <StyledSelect value={value} onChange={onChange} {...props}>
+      {options.map((option) => (
+        <option value={option.value} key={option.value}>
+          {option.label}
+        </option>
+      ))}
+    </StyledSelect>
   );
 }
 

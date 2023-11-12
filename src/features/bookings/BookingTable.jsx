@@ -1,20 +1,18 @@
-// import styled from 'styled-components';
-import { useBookings } from "./useBookings";
 import BookingRow from "./BookingRow";
 import Table from "../../ui/Table";
 import Menus from "../../ui/Menus";
-import Pagination from "../../ui/Pagination";
 import Empty from "../../ui/Empty";
+
+import { useBookings } from "./useBookings";
 import Spinner from "../../ui/Spinner";
+import Pagination from "../../ui/Pagination";
 
 function BookingTable() {
-  const { bookings, count, isLoading } = useBookings();
+  const { bookings, isLoading, count } = useBookings();
 
   if (isLoading) return <Spinner />;
-  if (!bookings.length) return <Empty resourceName={"bookings"} />;
 
-  // VIDEO stupid JS bug, just an example of course
-  // null.toUpperCase();
+  if (!bookings.length) return <Empty resourceName="bookings" />;
 
   return (
     <Menus>
@@ -28,7 +26,6 @@ function BookingTable() {
           <div></div>
         </Table.Header>
 
-        {/* Render props */}
         <Table.Body
           data={bookings}
           render={(booking) => (
