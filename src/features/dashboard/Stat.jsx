@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { box } from 'styles/styles';
+import styled from "styled-components";
+import { box } from "styles/styles";
 
 const StyledStat = styled.div`
   ${box}
@@ -20,7 +20,6 @@ const Icon = styled.div`
   align-items: center;
   justify-content: center;
 
-  /* Make these dynamic, based on the received prop */
   background-color: var(--color-${(props) => props.color}-100);
 
   & svg {
