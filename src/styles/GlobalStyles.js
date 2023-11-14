@@ -139,7 +139,7 @@ h6 {
 img {
   max-width: 100%;
 
-  /* For dark mode */
+  /* Dark mode */
   filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));
 }
 
