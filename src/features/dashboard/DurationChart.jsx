@@ -314,8 +314,6 @@ function DurationChart({ confirmedStays }) {
           </Pie>
           <Tooltip />
           <Legend
-            // verticalAlign='bottom'
-            // align='center'
             verticalAlign="middle"
             align="right"
             width="30%"
