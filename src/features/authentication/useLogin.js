@@ -5,16 +5,6 @@ import { toast } from "react-hot-toast";
 
 export function useLogin() {
   const navigate = useNavigate();
-  const { mutate: login, isLoading: loading } = useMutation({
-    mutationFn: ({ email, password }) => loginApi({ email, password }),
-    onSuccess: (user) => {
-      navigate("/dashboard");
-    },
-    onError: (err) => {
-      console.log("ERROR", err);
-      toast.error("Provided email or pasword are incorrect");
-    },
-  });
 
   return { login, loading };
 }
