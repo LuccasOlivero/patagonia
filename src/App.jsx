@@ -25,6 +25,8 @@ const queryClient = new QueryClient({
   },
 });
 
+// new features -> add "show password" in /login
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -39,8 +41,7 @@ function App() {
                 <AppLayout />
               </ProtectedRoutes>
             }
-          ></Route>
-          <Route element={<AppLayout />}>
+          >
             <Route index element={<Navigate replace to="dashboard" />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="bookings" element={<Bookings />} />
