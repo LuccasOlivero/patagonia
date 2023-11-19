@@ -19,6 +19,8 @@ const Form = styled.form`
     
   overflow: hidden;
   font-size: 1.4rem;
+  margin: 0 auto;
+  width: 50%;
 `;
 
 Form.defaultProps = {
