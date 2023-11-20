@@ -1,10 +1,10 @@
-import { useUser } from "features/authentication/useUser";
+import { useUser } from "./useUser";
 import { useState } from "react";
-import Button from "ui/Button";
-import FileInput from "ui/FileInput";
-import Form from "ui/Form";
-import FormRow from "ui/FormRow";
-import Input from "ui/Input";
+import Button from "../../ui/Button";
+import FileInput from "../../ui/FileInput";
+import Form from "../../ui/Form";
+import FormRow from "../../ui/FormRow";
+import Input from "../../ui/Input";
 import { useUpdateUser } from "./useUpdateUser";
 
 function UpdateUserDataForm() {
@@ -15,10 +15,10 @@ function UpdateUserDataForm() {
     },
   } = useUser();
 
+  const { updateUser, isUpdating } = useUpdateUser();
+
   const [fullName, setFullName] = useState(currentFullName);
   const [avatar, setAvatar] = useState(null);
-
-  const { mutate: updateUser, isLoading: isUpdating } = useUpdateUser();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -63,10 +63,15 @@ function UpdateUserDataForm() {
         />
       </FormRow>
       <FormRow>
-        <Button onClick={handleCancel} type="reset" variation="secondary">
+        <Button
+          onClick={handleCancel}
+          type="reset"
+          variation="secondary"
+          disabled={isUpdating}
+        >
           Cancel
         </Button>
-        <Button disabled={isUpdating}>Update account</Button>
+        <Button>Update account</Button>
       </FormRow>
     </Form>
   );

@@ -1,6 +1,11 @@
 import styled, { css } from "styled-components";
 
 const Form = styled.form`
+  overflow: hidden;
+  font-size: 1.4rem;
+  margin: 0 auto;
+  width: 100%;
+
   ${(props) =>
     props.type === "regular" &&
     css`
@@ -16,11 +21,14 @@ const Form = styled.form`
     css`
       width: 80rem;
     `}
-    
-  overflow: hidden;
-  font-size: 1.4rem;
-  margin: 0 auto;
-  width: 50%;
+
+    ${(props) =>
+    props.type === "medium" &&
+    css`
+      width: 50%;
+      padding: 2.4rem 3rem;
+      background-color: var(--color-grey-0);
+    `}
 `;
 
 Form.defaultProps = {
