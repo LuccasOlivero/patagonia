@@ -3,6 +3,7 @@ import Logout from "../features/authentication/Logout";
 import ButtonIcon from "./ButtonIcon";
 import { HiOutlineUser } from "react-icons/hi2";
 import { useNavigate } from "react-router-dom";
+import DartkModeToggle from "./DartkModeToggle";
 
 const StyledHeaderMenu = styled.ul`
   display: flex;
@@ -17,6 +18,10 @@ function HeaderMenu() {
         <ButtonIcon>
           <HiOutlineUser onClick={() => navigate("/account")} />
         </ButtonIcon>
+      </li>
+
+      <li>
+        <DartkModeToggle />
       </li>
       <li>
         <Logout />
