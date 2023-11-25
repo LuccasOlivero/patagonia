@@ -5,6 +5,14 @@ import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 
 import { useUpdateUser } from "./useUpdateUser";
+import styled from "styled-components";
+
+const ContainerButton = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  gap: 2rem;
+`;
 
 function UpdatePasswordForm() {
   const { register, handleSubmit, formState, getValues, reset } = useForm();
@@ -54,10 +62,12 @@ function UpdatePasswordForm() {
         />
       </FormRow>
       <FormRow>
-        <Button onClick={reset} type="reset" variation="secondary">
-          Cancel
-        </Button>
-        <Button disabled={isUpdating}>Update password</Button>
+        <ContainerButton>
+          <Button onClick={reset} type="reset" variation="secondary">
+            Cancel
+          </Button>
+          <Button disabled={isUpdating}>Update password</Button>
+        </ContainerButton>
       </FormRow>
     </Form>
   );

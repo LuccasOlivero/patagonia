@@ -5,6 +5,7 @@ const Form = styled.form`
   font-size: 1.4rem;
   margin: 0 auto;
   width: 100%;
+  max-width: 900px;
 
   ${(props) =>
     props.type === "regular" &&

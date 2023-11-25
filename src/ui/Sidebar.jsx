@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Logo from "./Logo";
 import MainNav from "./MainNav";
-// import Uploader from "../data/Uploader";
+import { Link, NavLink } from "react-router-dom";
 
 const StyledSidebar = styled.aside`
   background-color: var(--color-grey-0);
@@ -12,6 +12,22 @@ const StyledSidebar = styled.aside`
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+  position: relative;
+`;
+
+const Copyright = styled.p`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    color: var(--color-brand-600);
+  }
 `;
 
 function Sidebar() {
@@ -20,7 +36,9 @@ function Sidebar() {
       <Logo />
       <MainNav />
 
-      {/* <Uploader /> */}
+      <a href="https://www.linkedin.com/in/lucas-olivero-319090264/">
+        <Copyright>&copy; Luccas Olivero {new Date().getFullYear()}</Copyright>
+      </a>
     </StyledSidebar>
   );
 }

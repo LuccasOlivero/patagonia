@@ -85,11 +85,11 @@ const GlobalStyles = createGlobalStyle`
   --color-brand-50: #eef2ff;
   --color-brand-100: #e0e7ff;
   --color-brand-200: #c7d2fe;
-  --color-brand-500: #6366f1;
-  --color-brand-600: #4f46e5;
-  --color-brand-700: #4338ca;
-  --color-brand-800: #3730a3;
-  --color-brand-900: #312e81;
+  --color-brand-500: #2CD07B;
+  --color-brand-600: #1DB466;
+  --color-brand-700: #187D49;
+  --color-brand-800: #125E37;
+  --color-brand-900: #0B4427;
   
   --border-radius-tiny: 3px;
   --border-radius-sm: 5px;

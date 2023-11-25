@@ -98,15 +98,14 @@ import { useDarkMode } from "../../context/DarkModeContext";
 // };
 
 const ChartBox = styled.div`
+  background-color: var(--color-grey-100);
   padding: 2.4rem 3.2rem;
-
   grid-column: 3 / span 2;
 
   & .recharts-pie-label-text {
     font-weight: 600;
   }
 
-  /* A bit hack, but okay */
   & > *:first-child {
     margin-bottom: 1.6rem;
   }

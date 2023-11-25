@@ -6,6 +6,14 @@ import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import { useUpdateUser } from "./useUpdateUser";
+import styled from "styled-components";
+
+const ContainerButton = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  gap: 2rem;
+`;
 
 function UpdateUserDataForm() {
   const {
@@ -63,15 +71,17 @@ function UpdateUserDataForm() {
         />
       </FormRow>
       <FormRow>
-        <Button
-          onClick={handleCancel}
-          type="reset"
-          variation="secondary"
-          disabled={isUpdating}
-        >
-          Cancel
-        </Button>
-        <Button>Update account</Button>
+        <ContainerButton>
+          <Button
+            onClick={handleCancel}
+            type="reset"
+            variation="secondary"
+            disabled={isUpdating}
+          >
+            Cancel
+          </Button>
+          <Button>Update account</Button>
+        </ContainerButton>
       </FormRow>
     </Form>
   );
