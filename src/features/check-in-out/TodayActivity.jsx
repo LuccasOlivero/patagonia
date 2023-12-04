@@ -4,8 +4,9 @@ import Heading from "../../ui/Heading";
 import { useTodayActivity } from "./useTodayActivity";
 import Spinner from "../../ui/Spinner";
 import TodayItem from "./TodayItem";
+import { motion } from "framer-motion";
 
-const StyledToday = styled.div`
+const StyledToday = styled(motion.div)`
   background-color: var(--color-grey-100);
   padding: 3.2rem;
   display: flex;
@@ -38,7 +39,17 @@ function TodayActivity() {
   const { activities, isLoading } = useTodayActivity();
 
   return (
-    <StyledToday>
+    <StyledToday
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+      transition={{
+        delay: 0.2,
+      }}
+    >
       <Row type="horizontal">
         <Heading type="h2">Today</Heading>
       </Row>

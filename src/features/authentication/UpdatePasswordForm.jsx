@@ -61,6 +61,7 @@ function UpdatePasswordForm() {
           })}
         />
       </FormRow>
+
       <FormRow>
         <ContainerButton>
           <Button onClick={reset} type="reset" variation="secondary">
