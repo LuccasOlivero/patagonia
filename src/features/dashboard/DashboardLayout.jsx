@@ -2,7 +2,6 @@ import styled from "styled-components";
 import Stats from "./Stats";
 import { useRecentStays } from "./useRecentStays";
 import Spinner from "../../ui/Spinner";
-// import { useRecentBookings } from "./useRecentBookings";
 import { useCabins } from "../cabins/useCabins";
 import SalesChart from "./SalesChart";
 import DurationChart from "./DurationChart";
@@ -34,11 +33,8 @@ function DashboardLayout() {
     queryKey: ["bookings", `last-${numDays2}`],
   });
 
-  // const { bookings, isLoading: isLoading1 } = useRecentBookings();
   const { isLoading: isLoading2, confirmedStays, numDays } = useRecentStays();
   const { cabins, isLoading: isLoading3 } = useCabins();
-
-  // console.log({ bookings, isLoading1 });
 
   if (isLoading1 || isLoading2 || isLoading3) return <Spinner />;
 
